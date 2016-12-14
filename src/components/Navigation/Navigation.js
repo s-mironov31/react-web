@@ -11,6 +11,10 @@ import React, { PropTypes } from 'react';
 import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Navigation.css';
+import Nav from 'react-bootstrap/lib/Nav';
+import Navbar from 'react-bootstrap/lib/Navbar';
+import NavItem  from 'react-bootstrap/lib/NavItem';
+import LinkContainer from 'react-router-bootstrap/lib/LinkContainer';
 import Link from '../Link';
 
 class Navigation extends React.Component {
@@ -19,7 +23,7 @@ class Navigation extends React.Component {
   };
 
   render() {
-    return (
+    return (<div>
       <div className={cx(s.root, this.props.className)} role="navigation">
         <Link className={s.link} to="/about">About</Link>
         <Link className={s.link} to="/contact">Contact</Link>
@@ -28,6 +32,24 @@ class Navigation extends React.Component {
         <span className={s.spacer}>or</span>
         <Link className={cx(s.link, s.highlight)} to="/register">Sign up</Link>
       </div>
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <span>Hello World</span>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav navbar>
+            <LinkContainer to='/about'>
+              <NavItem>About</NavItem>
+            </LinkContainer>
+            <LinkContainer to='/contact'>
+              <NavItem>Contact</NavItem>
+            </LinkContainer>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar></div>
     );
   }
 }

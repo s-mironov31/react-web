@@ -9,6 +9,7 @@
 
 import React from 'react';
 import Layout from '../../components/Layout';
+import SimpleSlider from '../../components/Slider';
 import Contact from './Contact';
 
 const title = 'Contact Us';
@@ -20,7 +21,10 @@ export default {
   action() {
     return {
       title,
-      component: <Layout><Contact title={title} /></Layout>,
+      component: <Layout>
+          <SimpleSlider />
+          <Contact title={title} />
+        </Layout>,
     };
   },
 
