@@ -11,6 +11,7 @@ import path from 'path';
 import webpack from 'webpack';
 import extend from 'extend';
 import AssetsPlugin from 'assets-webpack-plugin';
+// import ExtractTextPlugin  from 'extract-text-webpack-plugin';
 
 const isDebug = !process.argv.includes('--release');
 const isVerbose = process.argv.includes('--verbose');
@@ -77,7 +78,7 @@ const config = {
         },
       },
       {
-        test: /\.css/,
+        test: /\.css$/,
         loaders: [
           'isomorphic-style-loader',
           `css-loader?${JSON.stringify({
@@ -234,6 +235,7 @@ const clientConfig = extend(true, {}, config, {
       __DEV__: isDebug,
     }),
 
+    // new ExtractTextPlugin('styles.css'),
     // Emit a file with assets paths
     // https://github.com/sporto/assets-webpack-plugin#options
     new AssetsPlugin({

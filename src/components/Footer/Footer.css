@@ -40,6 +40,10 @@
   font-size: 1em;
 }
 
+.nav {
+    padding-bottom: 6px;
+}
+
 .link,
 .link:active,
 .link:visited {

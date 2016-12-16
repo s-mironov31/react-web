@@ -8,13 +8,15 @@
  */
 
 @import '../variables.css';
+/*@import '../bootstrap.scss';*/
+
 
 :root {
   --brand-color: #61dafb;
 }
 
 .root {
-  background: #373277;
+  background: #333;
   color: #fff;
 }
 
