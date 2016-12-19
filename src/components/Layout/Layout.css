@@ -25,6 +25,18 @@ html {
   line-height: 1.375; /* ~22px */
 }
 
+html, body, .page {
+    height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+}
+
+.page-wrap .page-buf{
+  height: 61px;
+}
+
 a {
   color: #0074c2;
 }
@@ -104,6 +116,9 @@ textarea {
   padding: 0.2em 0;
 }
 
+:global(#app) {
+  height: 100%;
+}
 /*
  * Print styles
  * Inlined to avoid the additional HTTP request:

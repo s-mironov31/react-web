@@ -8,27 +8,28 @@
  */
 
 import React, { PropTypes } from 'react';
+import importcss from 'importcss';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Layout.css';
 import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
 
-class Layout extends React.Component {
+@importcss(require('./Layout.css'))
+export default class Layout extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
   };
 
   render() {
     return (
-      <div>
-        <Header />
-        {this.props.children}
-        {/*<Feedback />*/}
+      <div styleName="page">
+        <div styleName="page-wrap">
+          <Header />
+          {this.props.children}  
+          <div styleName="page-buf" />
+        </div>
         <Footer />
       </div>
     );
   }
 }
-
-export default withStyles(s)(Layout);

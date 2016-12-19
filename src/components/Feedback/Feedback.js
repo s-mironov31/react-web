@@ -8,27 +8,50 @@
  */
 
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Feedback.css';
+import Form from 'react-bootstrap/lib/Form';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import FormControl from 'react-bootstrap/lib/FormControl';
+import Button from 'react-bootstrap/lib/Button';
+import Col from 'react-bootstrap/lib/Col';
+import importcss from 'importcss'
 
-class Feedback extends React.Component {
+@importcss(require('./Feedback.css'))
+export default class Feedback extends React.Component {
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <a
-            className={s.link}
-            href="https://gitter.im/kriasoft/react-starter-kit"
-          >Ask a question</a>
-          <span className={s.spacer}>|</span>
-          <a
-            className={s.link}
-            href="https://github.com/kriasoft/react-starter-kit/issues/new"
-          >Report an issue</a>
-        </div>
-      </div>
+      <Form horizontal>
+        <FormGroup>
+          <Col sm={6}>
+            <FormControl type="text" styleName="control" placeholder="Как вас зовут" />
+          </Col>
+          <Col sm={6}>
+            <FormControl type="text" placeholder="Ваша компания" />
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Col sm={6}>
+            <FormControl type="text" placeholder="Телефон" />
+          </Col>
+          <Col sm={6}>
+            <FormControl type="email" placeholder="E-mail" />
+          </Col>
+        </FormGroup>
+
+        <FormGroup controlId="formControlsTextarea">
+          <Col sm={12}>
+            <FormControl componentClass="textarea" placeholder="Вкратце опишите вашу задачу" />
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Col smOffset={4} sm={4}>
+            <Button type="submit">
+            Отправить запрос
+            </Button>
+          </Col>
+        </FormGroup>
+      </Form>
     );
   }
 }
-
-export default withStyles(s)(Feedback);

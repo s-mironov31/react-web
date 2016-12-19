@@ -10,6 +10,7 @@
 @import '../variables.css';
 
 .root {
+  margin-top: -61px;
   background: #333;
   color: #fff;
 }
