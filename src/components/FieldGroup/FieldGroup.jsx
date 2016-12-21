@@ -8,7 +8,7 @@ export default class FieldGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
-    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(value){
@@ -17,11 +17,11 @@ export default class FieldGroup extends React.Component {
 
   render() {
     const { label, ...props } = this.props;
-
+    
     return (
       <div styleName='field'>
-        <FormControl styleName={`field-control ${this.state.value ? 'not-empty' : ''}`} onChange={this.handleChange} {...props} />
-        <ControlLabel styleName="field-label" onChange={this.handleChange} controlId={this.props.id}>{label}</ControlLabel>
+        <FormControl styleName={`field-control ${this.state.value ? 'not-empty' : ''}`} onChanged={this.handleChange} {...props} />
+        <ControlLabel styleName="field-label" controlId={this.props.id}>{label}</ControlLabel>
         <div styleName="field-bar" />
       </div>
     );

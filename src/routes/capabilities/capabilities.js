@@ -22,19 +22,8 @@ class Capabilities extends React.Component {
       <div className={s.root}>
         <div className={s.container}>
           <h1>{this.props.title}</h1>
-          <p>...</p>
-          <FieldGroup
-            id="name"
-            label="Ваше имя"
-            type="text"
-            required
-          />
-          <FieldGroup
-            id="textarea"
-            label="Суть Вашего обращения"
-            textarea
-            required
-          />
+          <FieldGroup id="name" label="Ваше имя" type="text" required />
+          <FieldGroup id="textarea" label="Суть Вашего обращения" textarea required />
         </div>
       </div>
     );

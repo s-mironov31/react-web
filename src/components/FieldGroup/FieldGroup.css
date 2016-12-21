@@ -41,7 +41,7 @@
 .field-control:hover ~ .field-label,
 .field-control:active ~ .field-label,
 .field-control:focus ~ .field-label,
-.field-control ~ .field-label {
+.field-control.not-empty ~ .field-label {
     -webkit-transform: translateY(-27px);
     -ms-transform: translateY(-27px);
     transform: translateY(-27px);

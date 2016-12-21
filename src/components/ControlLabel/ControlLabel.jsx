@@ -8,7 +8,7 @@ export default class ControlLabel extends React.Component {
     const { controlId, children, ...props } = this.props;
 
     return (
-      <label styleName='animate' for={controlId} {...props}>{children}</label>
+      <label styleName='animate' htmlFor={controlId} {...props}>{children}</label>
     );
   }
 };
