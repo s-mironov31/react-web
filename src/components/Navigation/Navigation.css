@@ -18,14 +18,17 @@
   font-size: 1.125em; /* ~18px */
 }
 
-.link,
-.link:active,
-.link:visited {
-  color: rgba(255, 255, 255, 0.6);
+.link {
+  color: rgba(0, 0, 0, 1);
 }
 
+/*.link:active,
+.link:visited {
+  color: rgba(255, 0, 0, 0.6);
+  text-decoration: none;
+}*/
 .link:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .highlight {

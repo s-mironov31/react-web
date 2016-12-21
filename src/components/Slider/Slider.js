@@ -30,7 +30,6 @@ export default class SimpleSlider extends React.Component {
     const settings = {
       arrows: false,
       dots: false,
-      autoplay: true,
       autoplaySpeed: 5*1000
    };
    return (

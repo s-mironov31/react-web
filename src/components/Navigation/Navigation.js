@@ -8,31 +8,40 @@
  */
 
 import React, { PropTypes } from 'react';
-import cx from 'classnames';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Navigation.css';
+import importcss from 'importcss';
+import history from '../../core/history';
 import Link from '../Link';
 
-class Navigation extends React.Component {
+@importcss(require('./Navigation.css'))
+export default class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {link: history ? history.location.pathname : ''};
+    this.handleClick = this.handleClick.bind(this);
+  }
   static propTypes = {
     className: PropTypes.string,
   };
 
+  handleClick(link){
+    this.setState({link});
+  }
+
   render() {
+    const link = this.state.link;
+    const { ...props } = this.props;
     return (
-      <div className={cx(s.root, this.props.className)} role="navigation">
-        <Link className={s.link} to="/">Компания</Link>
-        <Link className={s.link} to="/capabilities">Возможности</Link>
-        <Link className={s.link} to="/portfolio">Портфолио</Link>
-        <Link className={s.link} to="/clients">Клиенты</Link>
-        <Link className={s.link} to="/contact">Контакты</Link>
-        {/*<span className={s.spacer}> | </span>
-        <Link className={s.link} to="/login">Log in</Link>
-        <span className={s.spacer}>or</span>
-        <Link className={cx(s.link, s.highlight)} to="/register">Sign up</Link>*/}
+      <div styleName='root' {...props} role="navigation">
+        <Link styleName='link' link={link} to="/" onClick={this.handleClick}>Компания</Link>
+        <Link styleName='link' link={link} to="/capabilities" onClick={this.handleClick}>Возможности</Link>
+        <Link styleName='link' link={link} to="/portfolio" onClick={this.handleClick}>Портфолио</Link>
+        <Link styleName='link' link={link} to="/clients" onClick={this.handleClick}>Клиенты</Link>
+        <Link styleName='link' link={link} to="/contact" onClick={this.handleClick}>Контакты</Link>
+        {/*<span styleName='spacer'> | </span>
+        <Link styleName='link' to="/login">Log in</Link>
+        <span styleName='spacer'>or</span>
+        <Link styleName='link highlight' to="/register">Sign up</Link>*/}
       </div>
     );
   }
 }
-
-export default withStyles(s)(Navigation);

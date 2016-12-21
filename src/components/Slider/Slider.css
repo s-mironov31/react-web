@@ -3,8 +3,27 @@
 :global {
     @import "slick-carousel/slick/slick.css";
     @import "slick-carousel/slick/slick-theme.css";
+    .slick-slider,
+    .slick-slider .slick-list,
+    .slick-slider .slick-list .slick-track,
+    .slick-slider .slick-list .slick-track .slick-slide {
+      height: 100%;
+    }
+
+    .slick-slide {position: relative;}
+    /*.slick-slide>div {
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+    }*/
 }
+
 .swiper-slide img{
-  width: 100%;
+  width: auto;
   height: auto;
+  min-width: 100%;
+  min-height: 100%;
 }

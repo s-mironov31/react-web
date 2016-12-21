@@ -8,6 +8,7 @@
  */
 
 import React, { PropTypes } from 'react';
+import importcss from 'importcss';
 import history from '../../core/history';
 
 function isLeftClickEvent(event) {
@@ -18,16 +19,18 @@ function isModifiedEvent(event) {
   return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 }
 
-class Link extends React.Component {
+@importcss(require('./Link.css'))
+export default class Link extends React.Component {
   static propTypes = {
     to: PropTypes.string.isRequired,
     children: PropTypes.node,
     onClick: PropTypes.func,
+    link: PropTypes.string
   };
 
   handleClick = (event) => {
     if (this.props.onClick) {
-      this.props.onClick(event);
+      this.props.onClick(this.props.to);
     }
 
     if (isModifiedEvent(event) || !isLeftClickEvent(event)) {
@@ -43,9 +46,8 @@ class Link extends React.Component {
   };
 
   render() {
-    const { to, children, ...props } = this.props;
-    return <a href={to} {...props} onClick={this.handleClick}>{children}</a>;
+    const selected = this.props.link == this.props.to ? 'yes' : 'no';
+    const { to, children, link, ...props } = this.props;
+    return <a href={to} {...props} styleName={`active-${selected}`} onClick={this.handleClick}>{children}</a>;
   }
 }
-
-export default Link;
