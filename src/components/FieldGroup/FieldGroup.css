@@ -1,0 +1,77 @@
+.field {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.field-control {
+  outline: none;
+  font-family: 'Lato';
+  font-size: 13px;
+  color: #c3cacc;
+  background-color: inherit;
+  border-width: 0;
+  border-style: solid;
+  border-bottom: none;
+  border-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 36px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.field-label {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  opacity: .5;
+  font-size: 13px;
+}
+
+.field-control:hover,
+.field-control.not-empty {
+  border-width: 1px;
+}
+
+.field-control:hover ~ .field-label,
+.field-control:active ~ .field-label,
+.field-control:focus ~ .field-label,
+.field-control ~ .field-label {
+    -webkit-transform: translateY(-27px);
+    -ms-transform: translateY(-27px);
+    transform: translateY(-27px);
+    opacity: 1;
+    font-size: 11px;
+}
+
+.field-bar {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(224, 184, 110, 1);
+}
+
+.field-bar:before,
+.field-bar:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 1px;
+  margin-top: -1px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  width: 0;
+}
+
+.field-control:hover ~ .field-bar:before,
+.field-control:active ~ .field-bar:before,
+.field-control:focus ~ .field-bar:before,
+.field-control.not-empty ~ .field-bar:before {
+  width: 100%;
+  background-color: rgba(224, 184, 0, 1);
+}

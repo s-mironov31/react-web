@@ -9,6 +9,7 @@
 
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import FieldGroup from '../../components/FieldGroup';
 import s from './Capabilities.css';
 
 class Capabilities extends React.Component {
@@ -22,6 +23,18 @@ class Capabilities extends React.Component {
         <div className={s.container}>
           <h1>{this.props.title}</h1>
           <p>...</p>
+          <FieldGroup
+            id="name"
+            label="Ваше имя"
+            type="text"
+            required
+          />
+          <FieldGroup
+            id="textarea"
+            label="Суть Вашего обращения"
+            textarea
+            required
+          />
         </div>
       </div>
     );
