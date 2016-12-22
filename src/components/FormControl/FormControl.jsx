@@ -9,11 +9,11 @@ export default class FormControl extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // static propTypes = {
-  //   type: PropTypes.string,
-  //   placeholder: PropTypes.string,
-  //   onChange: PropTypes.func
-  // };
+  static propTypes = {
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+    onChange: PropTypes.func
+  };
 
   handleChange(e) {
     if (this.props.onChanged) {
@@ -26,7 +26,7 @@ export default class FormControl extends React.Component {
   }
 
   render() {
-    const { id, type, placeholder, textarea, required, onChange, ...props } = this.props;
+    const { id, type, placeholder, textarea, required, onChanged, ...props } = this.props;
     let control = null;
 
     if (textarea) {

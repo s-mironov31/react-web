@@ -8,6 +8,9 @@
  */
 
 @import '../variables.css';
+:global {
+  @import '../bootstrap.css';
+}
 
 .root {
   background: #f5f5f5;

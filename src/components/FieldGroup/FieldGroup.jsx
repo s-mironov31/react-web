@@ -12,12 +12,16 @@ export default class FieldGroup extends React.Component {
   }
 
   handleChange(value){
+    if (this.props.onInput) {
+      this.props.onInput(value);
+    }
+
     this.setState({value});
   }
 
   render() {
-    const { label, ...props } = this.props;
-    
+    const { label, onInput, ...props } = this.props;
+
     return (
       <div styleName='field'>
         <FormControl styleName={`field-control ${this.state.value ? 'not-empty' : ''}`} onChanged={this.handleChange} {...props} />
