@@ -1,14 +1,5 @@
-:global {
-  a:focus {
-    text-decoration: none;
-    color: rgba(255, 0, 0, 0.6);
-  }
-}
-
-.active-yes {
-  color: rgba(255, 0, 0, 0.6);
-}
-
-.active-no {
-  color: inherit;;
+.active {
+  color: #fefefd;
+  border-color: rgba(235, 192, 113, 0.7);
+  background-color: rgba(255,255,255,0.1);
 }

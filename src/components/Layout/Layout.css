@@ -13,6 +13,9 @@
 
 @import '../variables.css';
 
+:global {
+  @import '../bootstrap.css';
+}
 /*
  * Base styles
  * ========================================================================== */
@@ -29,8 +32,15 @@ html, body, .page {
     height: 100%;
 }
 
+body {
+  /*background: url(../tc.jpg) repeat;*/
+}
+
 .page-wrap {
   min-height: 100%;
+  height: 2500px;
+  background: url(../bg.png) center top no-repeat;
+
 }
 
 .page-wrap .page-buf{
@@ -38,9 +48,16 @@ html, body, .page {
 }
 
 a {
-  color: #0074c2;
+  color: rgba(235, 192, 113, 1);
 }
-
+a:hover {
+    color: rgba(235, 192, 113, 1);
+    text-decoration: underline;
+}
+a:focus {
+    color: #fefefd;
+    text-decoration: none;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301

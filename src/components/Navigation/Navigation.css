@@ -13,23 +13,27 @@
 
 .link {
   display: inline-block;
-  padding: 3px 8px;
+  margin: auto 2px;
+  padding: 4px 9px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(235, 192, 113, 1);
   text-decoration: none;
+  font-family: 'Lato';
   font-size: 1.125em; /* ~18px */
+  color: #ebc071;
+  background-color: inherit;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
-
-.link {
-  color: rgba(0, 0, 0, 1);
-}
-
 /*.link:active,
 .link:visited {
   color: rgba(255, 0, 0, 0.6);
   text-decoration: none;
 }*/
 .link:hover {
-  color: rgba(0, 0, 0, 0.6);
-  text-decoration: underline;
+  border-color: rgba(235, 192, 113, 0.7);
+  background-color: rgba(255,255,255,0.1);
 }
 
 .highlight {

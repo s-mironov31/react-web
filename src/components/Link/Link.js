@@ -46,8 +46,9 @@ export default class Link extends React.Component {
   };
 
   render() {
-    const selected = this.props.link == this.props.to ? 'yes' : 'no';
     const { to, children, link, ...props } = this.props;
-    return <a href={to} {...props} styleName={`active-${selected}`} onClick={this.handleClick}>{children}</a>;
+    const selected = link == to ? 'active' : '';
+
+    return <a href={to} {...props} styleName={`${selected}`} onClick={this.handleClick}>{children}</a>;
   }
 }
