@@ -25,7 +25,7 @@ export default class FieldGroup extends React.Component {
     return (
       <div styleName='field'>
         <FormControl styleName={`field-control ${this.props.textarea ? 'textarea' : ''} ${this.state.value ? 'not-empty' : ''}`} onChanged={this.handleChange} {...props} />
-        <ControlLabel styleName="field-label" controlId={this.props.id}>{label}</ControlLabel>
+        <ControlLabel styleName={`field-label ${this.props.required ? 'required' : ''}`} controlId={this.props.id}>{label}</ControlLabel>
         <div styleName={`field-bar ${this.props.textarea ? 'field-bar-textarea' : ''}`} />
       </div>
     );

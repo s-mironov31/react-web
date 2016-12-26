@@ -38,6 +38,9 @@
   font-family: 'Drugs';
   font-size: 1em;
 }
+.field-label.required:after {
+  content: '*';
+}
 
 .field-control:hover,
 .field-control:active,
