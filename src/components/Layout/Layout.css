@@ -12,9 +12,15 @@
 /*! React Starter Kit | MIT License | https://www.reactstarterkit.com/ */
 
 @import '../variables.css';
+@import '../../assets/css/fonts.css';
 
 :global {
-  @import '../bootstrap.css';
+  @import '../../assets/css/bootstrap.css';
+}
+
+:global .clearfix {
+  display: block;
+  clear: both;
 }
 /*
  * Base styles
@@ -24,7 +30,6 @@ html {
   color: #222;
   font-weight: 100;
   font-size: 1em; /* ~16px; */
-  font-family: var(--font-family-base);
   line-height: 1.375; /* ~22px */
 }
 
@@ -33,18 +38,20 @@ html, body, .page {
 }
 
 body {
+  font-family: var(--font-family-base);
   /*background: url(../tc.jpg) repeat;*/
 }
 
 .page-wrap {
   min-height: 100%;
   height: 2500px;
-  background: url(../bg.png) center top no-repeat;
-
+  background: url(../../assets/images/bg.png) center top no-repeat;
+  /*background-size: cover;*/
+  background-size: 100% 100%;
 }
 
 .page-wrap .page-buf{
-  height: 61px;
+  height: 170px;
 }
 
 a {
@@ -55,7 +62,7 @@ a:hover {
     text-decoration: underline;
 }
 a:focus {
-    color: #fefefd;
+    color: #ebc071;
     text-decoration: none;
 }
 /*

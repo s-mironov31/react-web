@@ -4,7 +4,7 @@ import Grid from 'react-bootstrap/lib/Grid';
 import Link from '../Link';
 import Navigation from '../Navigation';
 import ShareBar from '../ShareBar';
-import logoUrl from './logo@2x.png';
+import logoUrl from '../../assets/images/logo.png';
 
 @importcss(require('./Header.css'))
 export default class Header extends React.Component {
@@ -12,11 +12,17 @@ export default class Header extends React.Component {
     return (
       <header styleName='header'>
         <Grid>
-          <Navigation styleName='nav' />
-          <Link styleName='brand' to="/">
-            <img src={logoUrl} width="125" height="auto" alt="OKiWeb" />
-          </Link>
-          <ShareBar />
+          <div styleName='brandBox' className='pull-left'>
+            <Link to="/">
+              <img src={logoUrl} width="auto" height="auto" alt="OKiWeb" />
+              <span styleName='company-name'>one tack</span>
+            </Link>
+            <div styleName='company-title'>Video <span styleName='company-name'>&</span> Photography</div>
+            <div styleName='company-slogan'>Production Services</div>
+          </div>
+          <ShareBar styleName='nav'/>
+          <div className='clearfix' />
+          <Navigation />
         </Grid>
       </header>
     );

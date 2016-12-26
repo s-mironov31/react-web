@@ -5,14 +5,15 @@
   margin: 0;
   list-style-type: none;
 }
+
 .item {
   display: inline-block;
   vertical-align: top;
   margin: 0 3px;
 }
 
-.vk { background: url(../vk.png); }
-.fb { background: url(../fb.png); }
-.odk { background: url(../odk.png); }
-.tw { background: url(../tw.png); }
-.instagram { background: url(../instagram.png); }
+.vk { background: url(../../assets/images/icons/vk.png); }
+.fb { background: url(../../assets/images/icons/fb.png); }
+.odk { background: url(../../assets/images/icons/odk.png); }
+.tw { background: url(../../assets/images/icons/tw.png); }
+.instagram { background: url(../../assets/images/icons/instagram.png); }

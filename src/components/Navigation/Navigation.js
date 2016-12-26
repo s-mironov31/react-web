@@ -31,7 +31,7 @@ export default class Navigation extends React.Component {
     const isActiveLink = this.state.isActiveLink;
     const { ...props } = this.props;
     return (
-      <div styleName='root' {...props} role="navigation">
+      <div styleName='root' {...props}>
         <Link styleName='link' link={isActiveLink} to="/" onClick={this.handleClick}>Компания</Link>
         <Link styleName='link' link={isActiveLink} to="/capabilities" onClick={this.handleClick}>Возможности</Link>
         <Link styleName='link' link={isActiveLink} to="/portfolio" onClick={this.handleClick}>Портфолио</Link>

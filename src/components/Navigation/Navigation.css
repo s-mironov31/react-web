@@ -9,6 +9,7 @@
 
 .root {
   margin: 0;
+  text-align: center;
 }
 
 .link {
@@ -19,8 +20,8 @@
   border-style: solid;
   border-color: rgba(235, 192, 113, 1);
   text-decoration: none;
-  font-family: 'Lato';
-  font-size: 1.125em; /* ~18px */
+  font-family: 'Drugs';
+  font-size: 1em;
   color: #ebc071;
   background-color: inherit;
   -webkit-transition: all .2s ease;
@@ -31,7 +32,9 @@
   color: rgba(255, 0, 0, 0.6);
   text-decoration: none;
 }*/
-.link:hover {
+.link:hover,
+.link:focus {
+  color: #ebc071;
   border-color: rgba(235, 192, 113, 0.7);
   background-color: rgba(255,255,255,0.1);
 }

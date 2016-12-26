@@ -1,40 +1,53 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Footer.css';
+import importcss from 'importcss';
+import Grid from 'react-bootstrap/lib/Grid';
 import Link from '../Link';
-import logoUrl from '../Header/logo@2x.png';
+import logoUrl from '../../assets/images/logo.png';
 
-class Footer extends React.Component {
+@importcss(require('./Footer.css'))
+export default class Footer extends React.Component {
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          {/*<div className={s.nav}>
-            <Link className={s.link} to="/">Home</Link>
-            <span className={s.spacer}>·</span>
-            <Link className={s.link} to="/admin">Admin</Link>
-            <span className={s.spacer}>·</span>
-            <Link className={s.link} to="/privacy">Privacy</Link>
-            <span className={s.spacer}>·</span>
-            <Link className={s.link} to="/not-found">Not Found</Link>
-          </div>*/}
-          <span className={s.text}>© OKiWeb, 2016.</span>
-          <img src={logoUrl} width="80" height="auto" alt="OKiWeb" />
-          <span className={s.text}>305000 Россия, г. Курск, ул. Дзержинского, 19</span>
-
-        </div>
+      <div styleName='root'>
+        <Grid>
+          <div className='pull-left' styleName='brandBox'>
+            <Link to="/">
+              <img src={logoUrl} width="30" height="auto" alt="OKiWeb" />
+              <span styleName='company-name'>one tack</span>
+            </Link>
+            <div styleName='company-title'>Video <span styleName='company-name'>&</span> Photography</div>
+            <div styleName='company-slogan'>Production Services</div>
+          </div>
+          <div className='clearfix' />
+          <div className='row'>
+            <div className='col-sm-3'>
+              <span>305000, г. Курск</span>
+              <br /><span>ул. Дзержинского, 19</span>
+              <br /><span>info@onetack.ru</span>
+              <br /><br /><span>2016 © ONE TAKE</span>
+            </div>
+            <div className='col-sm-3'>
+              <br className='hidden-xs hidden-sm' /><span>ПО ВОПРОСАМ</span>
+              <br/><span>СОТРУДНИЧЕСТВА</span>
+              <br /><br /><span>onetake@inbox.ru</span>
+            </div>
+            <div className='col-sm-3'>
+              <br className='hidden-xs hidden-sm' />
+              <br className='hidden-xs hidden-sm' />
+              <br className='hidden-xs hidden-sm' />
+              <br className='hidden-xs hidden-sm' />
+              <span>Т. +7(951) 330-79-94</span>
+            </div>
+            <div className='hidden-xs hidden-sm'>
+              <br className='hidden-xs hidden-sm' />
+              <br className='hidden-xs hidden-sm' />
+              <span>РАЗРАБОТАНО OKiWeb</span>
+              <br /><br/><span>OKiWeb.ru</span>
+            </div>
+          </div>
+        </Grid>
+        <div className='clearfix' />
       </div>
     );
   }
 }
-
-export default withStyles(s)(Footer);

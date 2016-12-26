@@ -7,8 +7,8 @@
 
 .field-control {
   outline: none;
-  font-family: 'Lato';
-  font-size: 13px;
+  font-family: 'Drugs';
+  font-size: 1em;
   color: #fefefd;
   background-color: inherit;
   /*border: none;*/
@@ -35,8 +35,8 @@
   top: 12px;
   left: 10px;
   color: #fefefd;
-  font-size: 13px;
-  font-family: 'Lato';
+  font-family: 'Drugs';
+  font-size: 1em;
 }
 
 .field-control:hover,

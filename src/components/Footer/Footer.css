@@ -10,16 +10,40 @@
 @import '../variables.css';
 
 .root {
-  margin-top: -61px;
-  background: #f9ecde;
-  color: #fff;
+  min-height: 170px;
+  margin-top: -170px;
+  padding-bottom: 17px;
+  font-family: Drugs;
+  font-size: 0.85em;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fefefd;
 }
 
 .container {
   margin: 0 auto;
   padding: 20px 15px;
-  max-width: var(--max-content-width);
+}
+
+.brandBox{
+  margin-bottom: 7px;
+  padding-top: 15px;
   text-align: center;
+  font-family: OptimusPrincepsSemiBold;
+  color: #ebc071;
+}
+.company-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+.company-title {
+  font-size: 0.82rem;
+  line-height: 0.85rem;
+}
+.company-slogan {
+  font-size: 0.65rem;
+  line-height: 0.85rem;
 }
 
 .text {

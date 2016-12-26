@@ -16,18 +16,29 @@
 }
 
 .header {
-  padding: 20px 0;
+  padding: 15px 0 5px;
+  color: #ebc071;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.brand {
-  color: color(var(--brand-color) lightness(+10%));
-  text-decoration: none;
-  font-size: 1.75em; /* ~28px */
+.brandBox{
+  margin-bottom: -10px;
+  text-align: center;
+  font-family: OptimusPrincepsSemiBold;
 }
 
-.brandTxt {
-  margin-left: 10px;
+.company-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.62em;
+  vertical-align: middle;
+}
+.company-title {
+  font-size: 1.175em;
+  line-height: 1em;
+}
+.company-slogan {
+  font-size: 0.72em;
 }
 
 .nav {

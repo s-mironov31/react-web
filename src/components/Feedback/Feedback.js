@@ -49,34 +49,38 @@ export default class Feedback extends React.Component {
   }
 
   render() {
+    const {children, ...props} = this.props;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <FormGroup>
-          <Col sm={12}>
-            <FieldGroup id="name" label="Ваше имя" type="text" onInput={this.handleNameInput} required />
-          </Col>
-        </FormGroup>
-        <FormGroup>
-          <Col sm={6}>
-            <FieldGroup id="email" label="E-mail" type="email" onInput={this.handleEmailInput} required />
-          </Col>
-          <Col sm={6}>
-            <FieldGroup id="phone" label="Телефон" type="text" onInput={this.handlePhoneInput} />
-          </Col>
-        </FormGroup>
-        <FormGroup>
-          <Col sm={12}>
-            <FieldGroup id="message" label="Суть Вашего обращения" onInput={this.handleMessageInput} textarea required />
-          </Col>
-        </FormGroup>
-        <FormGroup>
-          <Col sm={12}>
-            <button className="center-block" styleName="submit" type="submit">
-              Отправить запрос
-            </button>
-          </Col>
-        </FormGroup>
-      </form>
+      <div {...props}>
+        {children}
+        <form onSubmit={this.handleSubmit}>
+          <FormGroup>
+            <Col sm={12}>
+              <FieldGroup id="name" label="Ваше имя" type="text" onInput={this.handleNameInput} required />
+            </Col>
+          </FormGroup>
+          <FormGroup>
+            <Col sm={6}>
+              <FieldGroup id="email" label="E-mail" type="email" onInput={this.handleEmailInput} required />
+            </Col>
+            <Col sm={6}>
+              <FieldGroup id="phone" label="Телефон" type="text" onInput={this.handlePhoneInput} />
+            </Col>
+          </FormGroup>
+          <FormGroup>
+            <Col sm={12}>
+              <FieldGroup id="message" label="Суть Вашего обращения" onInput={this.handleMessageInput} textarea required />
+            </Col>
+          </FormGroup>
+          <FormGroup>
+            <Col sm={12}>
+              <button className="center-block" styleName="submit" type="submit">
+                Отправить запрос
+              </button>
+            </Col>
+          </FormGroup>
+        </form>
+      </div>
     );
   }
 }

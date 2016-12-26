@@ -5,8 +5,9 @@ import Share from '../Share';
 @importcss(require('./ShareBar.css'))
 export default class ShareBar extends React.Component {
   render() {
+    const { ...props } = this.props;
     return(
-      <ul styleName='list'>
+      <ul styleName='list' {...props}>
         <li styleName='item'>
           <Share to="https://vk.com/" styleName="vk" title="ВКонтакте" big />
         </li>
