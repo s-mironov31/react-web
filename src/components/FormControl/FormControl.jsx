@@ -15,24 +15,23 @@ export default class FormControl extends React.Component {
     onChange: PropTypes.func
   };
 
+  getValue() {
+      return this.textInput.value;
+  }
   handleChange(e) {
     if (this.props.onChanged) {
-      this.props.onChanged(e.target.value);
+      this.props.onChanged(this.textInput.value);
     }
-
-    this.setState({
-      value: e.target.value,
-    })
   }
 
   render() {
-    const { id, type, placeholder, textarea, required, onChanged, ...props } = this.props;
+    const { textarea, onChanged, ...props } = this.props;
     let control = null;
 
     if (textarea) {
-      control = <textarea onChange={this.handleChange} value={this.state.value} id={id} placeholder={placeholder} required={required} {...props} />;
+      control = <textarea onChange={this.handleChange} ref={(input) => this.textInput = input} {...props} />;
     } else {
-      control = <input onChange={this.handleChange} value={this.state.value} id={id} type={type} placeholder={placeholder} required={required} {...props} />
+      control = <input onChange={this.handleChange} ref={(input) => this.textInput = input} {...props} />
     }
 
     return control;

@@ -15,37 +15,23 @@ export default class Feedback extends React.Component {
       message: ''
     };
 
-    this.handleNameInput = this.handleNameInput.bind(this);
-    this.handleEmailInput = this.handleEmailInput.bind(this);
-    this.handlePhoneInput = this.handlePhoneInput.bind(this);
-    this.handleMessageInput = this.handleMessageInput.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleNameInput(value) {
+  handleInput() {
     this.setState({
-      name: value
+      name: this.nameInput.getValue(),
+      email: this.emailInput.getValue(),
+      phone: this.phoneInput.getValue(),
+      message: this.messageInput.getValue()
     });
-  };
-  handleEmailInput(value) {
-    this.setState({
-      email: value
-    });
-  };
-  handlePhoneInput(value) {
-    this.setState({
-      phone: value
-    });
-  };
-  handleMessageInput(value) {
-    this.setState({
-      message: value
-    });
-  };
+  }
 
   handleSubmit(e) {
     e.preventDefault();
-      alert(`name: ${this.state.name}; email: ${this.state.email}; phone: ${this.state.phone}; message: ${this.state.message}`);
+    console.log(e);
+    alert(`name: ${this.state.name}; email: ${this.state.email}; phone: ${this.state.phone}; message: ${this.state.message}`);
   }
 
   render() {
@@ -56,20 +42,20 @@ export default class Feedback extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <FormGroup>
             <Col sm={12}>
-              <FieldGroup id="name" label="Ваше имя" type="text" onInput={this.handleNameInput} required />
+              <FieldGroup value={this.state.name} ref={input => {this.nameInput = input}} id="name" label="Ваше имя" type="text" onInput={this.handleInput} required />
             </Col>
           </FormGroup>
           <FormGroup>
             <Col sm={6}>
-              <FieldGroup id="email" label="E-mail" type="email" onInput={this.handleEmailInput} required />
+              <FieldGroup value={this.state.email} ref={input => {this.emailInput = input}} id="email" label="E-mail" type="email" onInput={this.handleInput} required />
             </Col>
             <Col sm={6}>
-              <FieldGroup id="phone" label="Телефон" type="text" onInput={this.handlePhoneInput} />
+              <FieldGroup value={this.state.phone} ref={input => {this.phoneInput = input}} id="phone" label="Телефон" type="text" onInput={this.handleInput} />
             </Col>
           </FormGroup>
           <FormGroup>
             <Col sm={12}>
-              <FieldGroup id="message" label="Суть Вашего обращения" onInput={this.handleMessageInput} textarea required />
+              <FieldGroup value={this.state.message} ref={input => {this.messageInput = input}} id="message" label="Суть Вашего обращения" onInput={this.handleInput} textarea required />
             </Col>
           </FormGroup>
           <FormGroup>

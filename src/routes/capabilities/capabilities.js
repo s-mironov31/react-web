@@ -1,16 +1,12 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import React, { PropTypes } from 'react';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import Feedback from '../../components/Feedback';
 import s from './Capabilities.css';
+import todoApp from '../../redux/reducers'
+import App from '../../redux/components/App'
+
+let store = createStore(todoApp)
 
 class Capabilities extends React.Component {
   static propTypes = {
@@ -21,8 +17,9 @@ class Capabilities extends React.Component {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <h1>{this.props.title}</h1>
-          <Feedback />
+          <Provider store={store}>
+            <App />
+          </Provider>
         </div>
       </div>
     );

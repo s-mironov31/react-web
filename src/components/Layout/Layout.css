@@ -47,7 +47,7 @@ body {
   height: 2500px;
   background: url(../../assets/images/bg.png) center top no-repeat;
   /*background-size: cover;*/
-  background-size: 100% 100%;
+  /*background-size: 100% 100%;*/
 }
 
 .page-wrap .page-buf{
