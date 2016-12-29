@@ -20,6 +20,14 @@
   color: #ebc071;
   background-color: rgba(0, 0, 0, 0.4);
 }
+@media only screen and (min-width: 768px) {
+  .header {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+}
+.header-mobile {
+  background-color: #002937;
+}
 
 .brandBox{
   margin-bottom: -10px;
@@ -63,4 +71,19 @@
   color: rgba(255, 255, 255, 0.5);
   font-size: 1.25em;
   margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .main-menu-block {
+      display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-navbar {
+      display: none;
+  }
+  .mobile-menu {
+      display: none;
+  }
 }

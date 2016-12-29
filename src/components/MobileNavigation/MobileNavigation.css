@@ -1,0 +1,44 @@
+nav.mobile-menu.mobile-menu-hidden {
+    display: none;
+}
+
+nav.mobile-menu {
+  position: absolute;
+  top: 105px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #002937;
+  color: white;
+}
+
+nav.mobile-menu ul {
+    display: block;
+    margin: 0 40px 40px;
+    list-style: none;
+}
+
+nav.mobile-menu ul li {
+    font-size: 18px;
+    border-bottom: 1px solid #ebc071;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+nav.mobile-menu ul li .link {
+    display: block;
+    padding: 12px 0;
+}
+
+nav.mobile-menu .link {
+  color: #ebc071;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+nav.mobile-menu ul li:hover {
+  border-bottom: 1px solid #fefefd;
+}
+nav.mobile-menu ul li:hover .link {
+  text-decoration: none;
+  color: #fefefd;
+}

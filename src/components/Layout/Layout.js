@@ -25,7 +25,7 @@ export default class Layout extends React.Component {
       <div styleName="page">
         <div styleName="page-wrap">
           <Header />
-          {this.props.children}  
+          {this.props.children}
           <div styleName="page-buf" />
         </div>
         <Footer />
